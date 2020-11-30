@@ -17,7 +17,7 @@ class OpenWeather implements Weatherable
         $result = curl_exec($Curl_handler);
         curl_close($Curl_handler);
         $arr = json_decode($result, true);
-        $temperature = $arr["main"]["temp"];
+        $temperature = $arr["main"]["temp_max"];
         $temperature_in_C = $temperature - 273.15 . ' St. C';
         return $temperature_in_C;
     }
